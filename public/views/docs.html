@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/views/docs.css">
+
+    <title>Docs | Comercio Tech</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="../assets/logo.png" alt="Comercio Tech" height="30">
+            </div>
+
+            <ul class="links-container">
+                <li><a href="/" class="nav-links">Inicio</a></li>
+                <li><a href="/productos" class="nav-links">Productos</a></li>
+                <li><a href="/docs" class="nav-links">Documentación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="frontend-docs">
+            <h2 class="docs-title">
+                <span>Frontend</span> - Vistas disponibles
+            </h2>
+            <ul class="docs-list vertical">
+                <li class="item">
+                    <h4>Inicio</h4>
+                    <code>/</code>
+                    <p>Página principal de bienvenida a Comercio Tech.</p>
+                </li>
+                <li class="item">
+                    <h4>Productos</h4>
+                    <code>/productos</code>
+                    <p>Página del catálogo completo de productos disponibles.</p>
+                </li>
+                <li class="item">
+                    <h4>Detalle de Producto</h4>
+                    <code>/productos/:id</code>
+                    <p>Página un producto específico con información detallada.</p>
+                </li>
+                <li class="item">
+                    <h4>Documentación</h4>
+                    <code>/docs</code>
+                    <p>Página de documentación sobre el uso y navegación del sitio.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="backend-docs">
+            <h2 class="docs-title">
+                <span>Backend</span> - Rest API endpoints
+            </h2>
+            <div class="endpoints-list">
+                <ul class="docs-list vertical">
+                    <h3>
+                        <span>GET</span> Obtener productos (sin autenticación).
+                    </h3>
+                    <li class="item">
+                        <code>GET /api/products</code>
+                        <p>Devuelve la lista completa de productos.</p>
+                    </li>
+                    <li class="item">
+                        <code>GET /api/products/:id</code>
+                        <p>Devuelve un producto específico.</p>
+                    </li>
+                </ul>
+                <ul class="docs-list vertical">
+                    <h3>
+                        <span>POST</span> Crear productos (requiere autenticación).
+                    </h3>
+                    <li class="item">
+                        <code>POST /api/products/create</code>
+                        <p>Crea y guarda un nuevo producto en la base de datos.</p>
+
+                        <span>Headers requeridos:</span>
+                        <code>Authorization Bearer &lt;token&gt;</code>
+                        <span>Body:</span>
+                        <pre><code>{
+  "nombre": "Laptop Gaming",
+  "descripcion": "Laptop de alta gama",
+  "precio": 1500000,
+  "stock": 10,
+  "imagen": "&lt;url&gt;",
+  "categorias": ["electrónica", "computadoras"]
+}</code></pre>
+                    </li>
+                </ul>
+                <ul class="docs-list vertical">
+                    <h3>
+                        <span>DELETE</span> Eliminar productos (requiere autenticación).
+                    </h3>
+                    <li class="item">
+                        <code>DELETE /api/products/:id</code>
+                        <p>Elimina un producto específico de la base de datos.</p>
+
+                        <span>Headers requeridos:</span>
+                        <code>Authorization Bearer &lt;token&gt;</code>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="auth-docs">
+            <h2 class="docs-title">
+                <span>Autenticación</span>
+            </h2>
+            <p>Para crear o eliminar productos, necesitas un token JWT válido.</p>
+            <p>Realiza un request POST a <code>/auth/login</code> con tus credenciales para obtener un token. Luego, incluye ese token en el header <code>Authorization: Bearer &lt;token&gt;</code> en las peticiones protegidas.</p>
+            <ul class="docs-list vertical">
+                <li class="item">
+                    <span>Body:</span>
+                    <pre><code>{
+  "email": "&lt;email&gt;",
+  "password": "&lt;password&gt;"
+}</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section id="stack-docs">
+            <h2 class="docs-title">
+                <span>Tecnologías utilizadas</span>
+            </h2>
+            <ul class="docs-list horizontal">
+                <li class="item">
+                    <h4>Frontend</h4>
+                    <span>HTML, CSS, JavaScript</span>
+                </li>
+                <li class="item">
+                    <h4>Backend</h4>
+                    <span>Node.js, Express</span>
+                </li>
+                <li class="item">
+                    <h4>Base de Datos</h4>
+                    <span>Firebase</span>
+                </li>
+                <li class="item">
+                    <h4>Seguridad</h4>
+                    <span>JWT, CORS</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

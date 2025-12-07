@@ -1,7 +1,7 @@
 const pageTitle = document.querySelector('title');
 const productContainer = document.querySelector('section#product-info');
 
-const URL = 'http://localhost:4000';
+const URL = 'https://comercio-tech.vercel.app';
 const path = window.location.pathname;
 const productPathId = path.split("/")[2];
 

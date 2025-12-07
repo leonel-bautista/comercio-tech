@@ -1,6 +1,6 @@
 const productsList = document.querySelector('#products-list');
 
-const URL = 'http://localhost:4000';
+const URL = 'https://comercio-tech.vercel.app';
 
 async function getAllProducts() {
     try {
